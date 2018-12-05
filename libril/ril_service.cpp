@@ -1358,7 +1358,10 @@ Return<void> RadioImpl::setNetworkSelectionModeManual(int32_t serial,
 #endif
     dispatchStrings(serial, mSlotId, RIL_REQUEST_SET_NETWORK_SELECTION_MANUAL, true,
             1, operatorNumeric.c_str());
+<<<<<<< HEAD
 
+=======
+>>>>>>> 069519d... libril: Properly send fake success event for manual network registration
     return Void();
 }
 
