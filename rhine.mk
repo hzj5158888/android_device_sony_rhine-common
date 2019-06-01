@@ -41,6 +41,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/c6x02.sh:c6x02.sh
 
+ # Properties
+include $(LOCAL_PATH)/system_prop.mk
+
 # ANT+
 # PRODUCT_PACKAGES += \
 #    AntHalService \
@@ -82,6 +85,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcnefeatureconfig
 
+# Lights
+PRODUCT_PACKAGES += \
+    android.hardware.light@2.0-service.rhine
+
 # Init
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/init.msm8974-common.rc:root/init.msm8974-common.rc \
@@ -94,14 +101,8 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/init.qcom.power.rc:root/init.qcom.power.rc \
     $(COMMON_PATH)/rootdir/ueventd.qcom.rc:root/ueventd.qcom.rc
 
-
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/system/vendor/bin/credmgrfirstboot.sh:$(TARGET_COPY_OUT_VENDOR)/bin/credmgrfirstboot.sh
-
-
-# Connectivity
-PRODUCT_PACKAGES += \
-    libcnefeatureconfig
 
 # IPC Security Config
 PRODUCT_COPY_FILES += \
@@ -126,9 +127,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/netmgr_config.xml:system/etc/data/netmgr_config.xml \
     $(LOCAL_PATH)/configs/dsi_config.xml:system/etc/data/dsi_config.xml \
     $(LOCAL_PATH)/configs/qmi_config.xml:system/etc/data/qmi_config.xml
-BOARD_RIL_CLASS := ../../../$(COMMON_PATH)/ril/
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.telephony.ril_class=SonyRIL
+
 PRODUCT_PACKAGES += \
     libshim_ril_preload
 
@@ -147,6 +146,10 @@ PRODUCT_PACKAGES += \
     Nfc \
     Tag \
     com.android.nfc_extras
+
+# NFC treble service
+PRODUCT_PACKAGES += \
+    android.hardware.nfc@1.0-service
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml
@@ -193,4 +196,4 @@ PRODUCT_COPY_FILES += \
 
 # Include non-opensource parts
 $(call inherit-product, vendor/sony/rhine-common/rhine-common-vendor.mk)
-$(call inherit-product, vendor/sony/widevine/widevine.mk)
+#$(call inherit-product, vendor/sony/widevine/widevine.mk)
