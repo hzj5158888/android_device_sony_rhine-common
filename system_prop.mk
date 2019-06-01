@@ -8,8 +8,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Voice Call
 PRODUCT_PROPERTY_OVERRIDES += \
    ro.qc.sdk.audio.ssr=false \
-   ro.qc.sdk.audio.fluencetype=none \
-   persist.audio.fluence.voicecall=true \
+   ro.vendor.audio.sdk.fluencetype=none \
+   persist.vendor.audio.fluence.voicecall=true \
    persist.audio.fluence.voicerec=false \
    persist.audio.fluence.speaker=true \
    use.voice.path.for.pcm.voip=true
