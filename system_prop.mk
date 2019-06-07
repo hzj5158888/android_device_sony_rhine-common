@@ -1,17 +1,16 @@
 PRODUCT_PROPERTY_OVERRIDES += \
    wlan.driver.ath=0
 
-# Active Noise Cancelling
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.audio.anc.enabled=true
-
 # Voice Call
 PRODUCT_PROPERTY_OVERRIDES += \
    ro.qc.sdk.audio.ssr=false \
    ro.vendor.audio.sdk.fluencetype=none \
-   persist.vendor.audio.fluence.voicecall=true \
+   persist.audio.fluence.voicecall=true \
    persist.audio.fluence.voicerec=false \
    persist.audio.fluence.speaker=true \
+   persist.vendor.audio.fluence.voicecall=true \
+   persist.vendor.audio.fluence.voicerec=false \
+   persist.vendor.audio.fluence.speaker=true \
    use.voice.path.for.pcm.voip=true
 
 # aDSP sensors
@@ -54,7 +53,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # FM
 PRODUCT_PROPERTY_OVERRIDES += \
-   hw.fm.internal_antenna=true
+   vendor.hw.fm.internal_antenna=true
 
 # Semc
 PRODUCT_PROPERTY_OVERRIDES += \
